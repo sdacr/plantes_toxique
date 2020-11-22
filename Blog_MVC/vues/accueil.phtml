@@ -1,0 +1,61 @@
+<main class="main-acc">
+    <section>
+
+        <div class="image-acc">
+            <div class="content-acc">
+                <p>Les plantes toxiques</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sct-search">
+        <div>
+            <h2>toxiplante, site développé en projet de fin de cursus</h2>
+            <p>Toxiplante réalise en MVC se site a pour but de repertorier les plantes toxiques grace aux membres, afin d'ameliorer la visibilité et l'accessibilite a leur informations.
+
+                Cela ne remplace en rien la vérification realisé par un pharmacien ou autre professionnel specialisé
+            </p>
+            <p>pour trouver rapidement une plante utilisez la fonction de recherche proposée juste à coté.</p>
+        </div>
+
+
+        <fieldset class="search">
+            <form action="index.php?controller=accueil&action=search" method="POST">
+                <input id="plant" name="planti" placeholder="recherche par nom...">
+                <button id="search" type="submit">Rechercher</button>
+            </form>
+        </fieldset>
+
+
+    </section>
+
+    <section class="sct-slider">
+        <div class="titre-acc">
+            <h2>plantes toxiques à maturité </h2>
+            <p>slider affichant les plantes dont la maturité correspond au mois actuel, pouvez vous en reconnaitre autour de vous?</p>
+        </div>
+
+
+
+        <div class="carousselContainer">
+            <i class="fa fa-arrow-left" id="prevBtn"></i>
+            <i class="fa fa-arrow-right" id="nextBtn"></i>
+            <div class="carousel-slide">
+                <?php foreach ($plantes as $plante) : ?>
+
+                    <div class="indexPlt">
+                        <img src="uploads/<?= $plante->getImage() ?>" alt="<?= $plante->getImage() ?>">
+
+
+                        <p> <?= $plante->getScienceNom() ?> </p>
+                        <p><?= $plante->getNom() ?></p>
+                        <small class="more"><a title="lien page detail" href="index.php?controller=plante&action=show&id=<?= $plante->getId() ?>">en savoir plus...</a></small>
+                    </div>
+
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    </section>
+    <script src="assets/slider.js"></script>
+</main>

@@ -1,0 +1,24 @@
+<main class="main-acc">
+    <div class="center">
+        <p>Liste des couleurs: selectionner une couleur redigera sur une page contenant les plantes concernées et leurs détails
+        </p>
+    </div>
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                liste des couleurs
+            </th>
+
+        </tr>
+        <?php foreach ($couleurs as $couleur) : ?>
+            <tr>
+                <td>
+                    <a title="lien page plante par couleur" href="index.php?controller=plante&action=showc&id=<?= $couleur->getId() ?>"> <?= $couleur->getCouleur() ?></a>
+
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+</main>

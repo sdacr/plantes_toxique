@@ -1,0 +1,35 @@
+<main class="main-acc">
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                liste des couleurs
+            </th>
+            <th>
+                editer
+            </th>
+            <th>
+                supprimer
+            </th>
+
+        </tr>
+        <?php foreach ($couleurs as $couleur) : ?>
+            <tr>
+                <td>
+                    <?= $couleur->getCouleur() ?>
+                </td>
+                <td>
+                    <a title="lien edit" href="index.php?controller=couleur&action=edit&id=<?= $couleur->getId() ?>">edit</a>
+                </td>
+                <td>
+                    <a title="lien delete" href="index.php?controller=couleur&action=delete&id=<?= $couleur->getId() ?>">supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+    <div class="ajout">
+        <p>l'ajout d'une nouvelle couleur c'est ici:</p>
+        <a title="lien insert" href="index.php?controller=couleur&action=insert">insert</a>
+    </div>
+
+</main>

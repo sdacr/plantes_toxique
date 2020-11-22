@@ -1,0 +1,81 @@
+<main>
+    <fieldset id="field_plante">
+        <form id="plante_form" method="post" enctype="multipart/form-data">
+
+            <div id="select">
+                <div class="fg">
+                    <label for="id_couleur">couleur</label>
+                    <select class="lgth_select" name="id_couleur" id="id_couleur">
+                        <?php foreach ($couleurs as $couleur) : ?>
+                            <option value="<?= $couleur->getId(); ?>" <?php if ($plante->getId_couleur() == $couleur->getId()) : ?> selected <?php endif; ?>>
+                                <?= $couleur->getCouleur() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="fg">
+                    <label for="id_famille">famille</label>
+                    <select class="lgth_select" name="id_famille" id="id_famille">
+                        <?php foreach ($familles as $famille) : ?>
+                            <option value="<?= $famille->getId() ?>" <?php if ($plante->getId_couleur() == $famille->getId()) : ?> selected <?php endif; ?>>
+                                <?= $famille->getFamille() ?>
+
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="fg">
+                    <label for="id_principeActif">principe Actif</label>
+                    <select class="lgth_select" name="id_principeActif" id="id_principeActif">
+                        <?php foreach ($principes as $principe) : ?>
+                            <option value="<?= $principe->getId() ?>" <?php if ($plante->getId_couleur() == $principe->getId()) : ?> selected <?php endif; ?>>
+                                <?= $principe->getPrincipeActif() ?>
+
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div><br>
+
+            <label for="nom">nom de plante</label><br>
+            <textarea type="text" name="nom" id="name"><?= $plante->getNom() ?></textarea>
+
+            <label for="scienceNom">nom scientifique</label><br>
+            <textarea name="scienceNom" id="scienceNom" cols="30" rows="10"><?= $plante->getScienceNom() ?></textarea>
+
+            <label for="maturite">periode de maturité</label><br>
+            <textarea name="maturite" id="maturite" cols="30" rows="10"><?= $plante->getMaturite() ?></textarea>
+
+            <label for="periode">periode de vie</label><br>
+            <textarea name="periode" id="periode" cols="30" rows="10"><?= $plante->getPeriode() ?></textarea>
+
+            <label for="departement">departement</label><br>
+            <textarea name="departement" id="departement" cols="30" rows="10"><?= $plante->getDepartement() ?></textarea>
+
+            <label for="gravite">gravité des cas</label><br>
+            <textarea name="gravite" id="gravite" cols="30" rows="10"><?= $plante->getGravite() ?></textarea>
+
+            <label for="type">type de plante</label><br>
+            <textarea name="type" id="type" cols="30" rows="10"><?= $plante->getType() ?></textarea>
+
+            <label for="graine">type de graine</label><br>
+            <textarea name="graine" id="graine" cols="30" rows="10"><?= $plante->getGraine() ?></textarea>
+
+            <label for="fruit">type de fruit</label><br>
+            <textarea name="fruit" id="fruit" cols="30" rows="10"><?= $plante->getFruit() ?></textarea>
+
+            <label for="chair">type de chair</label><br>
+            <textarea name="chair" id="chair" cols="30" rows="10"><?= $plante->getChair() ?></textarea>
+
+            <label for="caractere">"caractere"</label><br>
+            <textarea name="caractere" id="caractere" cols="30" rows="10"><?= $plante->getCaractere() ?></textarea>
+
+            <input type="file" name="fileToUpload" id="fileToUpload">
+
+            <button class="save" type="submit">Enregistrer</button>
+        </form>
+
+
+    </fieldset>
+
+</main>

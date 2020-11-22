@@ -1,0 +1,33 @@
+<main class="main-acc">
+    <div class="center">
+        <p>Liste des familles ainsi que leurs caracetres generaux, cliquer sur une famille affichera toutes les plantes concernées
+        </p>
+    </div>
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                nom des familles
+            </th>
+            <th>
+                caractere de famille
+            </th>
+        </tr>
+
+
+        <?php foreach ($familles as $famille) : ?>
+            <tr>
+                <td>
+                    <a title="lien page plante par famille" href="index.php?controller=plante&action=showf&id=<?= $famille->getId() ?>"> <?= $famille->getFamille() ?></a>
+
+                </td>
+                <td>
+                    <?= $famille->getGeneral() ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+
+
+    </table>
+
+</main>

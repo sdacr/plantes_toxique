@@ -1,0 +1,33 @@
+<main class="main-acc">
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                nom des familles
+            </th>
+            <th>
+                editer
+            </th>
+            <th>
+                supprimer
+            </th>
+        </tr>
+        <?php foreach ($familles as $famille) : ?>
+            <tr>
+                <td>
+                    <?= $famille->getFamille() ?>
+                </td>
+                <td>
+                    <a title="lien edit" href="index.php?controller=famille&action=edit&id=<?= $famille->getId() ?>">edit</a>
+                </td>
+                <td>
+                    <a title="lien delete" href="index.php?controller=famille&action=delete&id=<?= $famille->getId() ?>">supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <div class="ajout">
+        <p>l'ajout d'une nouvelle famille c'est ici:</p>
+        <a title="lien insert" href="index.php?controller=famille&action=insert">insert</a>
+    </div>
+
+</main>

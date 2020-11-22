@@ -1,0 +1,84 @@
+<main class="main-acc">
+    <h2 class="info">toutes les plantes référencées triées par couleur (<?= $plantesaaa[0]->getCouleur() ?>)</h2>
+    <table class="tabl-cl">
+        <tr>
+            <th>
+                nom
+            </th>
+            <th>
+                nom scientifique
+            </th>
+            <th>
+                maturité
+            </th>
+            <th>
+                periode d'activité
+            </th>
+            <th>
+                departement
+            </th>
+            <th>
+                gravité des cas
+            </th>
+            <th>
+                type de plante
+            </th>
+            <th>
+                graine
+            </th>
+            <th>
+                fruit
+            </th>
+            <th>
+                chair
+            </th>
+            <th>
+                caractere
+            </th>
+        </tr>
+        <?php foreach ($plantesaaa as $plante) : ?>
+            <tr>
+
+                <td>
+                    <a title="page de la plante" href="index.php?controller=plante&action=show&id=<?= $plante->getId() ?>">
+                        <?= $plante->getNom() ?>
+                    </a>
+                </td>
+                <td>
+                    <?= $plante->getScienceNom() ?>
+                </td>
+                <td>
+                    <?= $plante->getMaturite() ?>
+                </td>
+                <td>
+                    <?= $plante->getPeriode() ?>
+                </td>
+                <td>
+                    <?= $plante->getDepartement() ?>
+                </td>
+                <td>
+                    <?= $plante->getGravite() ?>
+                </td>
+                <td>
+                    <?= $plante->getType() ?>
+                </td>
+
+                <td>
+                    <?= $plante->getGraine() ?>
+                </td>
+                <td>
+                    <?= $plante->getFruit() ?>
+                </td>
+                <td>
+                    <?= $plante->getChair() ?>
+                </td>
+                <td>
+                    <?= $plante->getCaractere() ?>
+                </td>
+
+
+            <?php endforeach; ?>
+            </tr>
+    </table>
+
+</main>

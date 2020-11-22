@@ -1,0 +1,8 @@
+a entrer dans l'url:
+http://localhost/Blog_MVC/index.php?controller=accueil&action=index
+avec xammp anyway
+
+mdp1:$$$$
+mdp2:1234
+
+

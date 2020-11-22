@@ -1,0 +1,102 @@
+<main>
+
+    <div class="ajout">
+        <p>l'ajout d'une nouvelle plante c'est ici:</p>
+        <a title="lien insert" href="index.php?controller=plante&action=insert">insert</a>
+    </div>
+    <table class="tr-plante ">
+        <tr>
+            <th class="th-plante">
+                nom
+            </th>
+            <th>
+                nom scientifique
+            </th>
+            <th>
+                maturité
+            </th>
+            <th>
+                periode d'activité
+            </th>
+            <th>
+                departement
+            </th>
+            <th>
+                gravité des cas
+            </th>
+            <th>
+                type de plante
+            </th>
+            <th>
+                graine
+            </th>
+            <th>
+                fruit
+            </th>
+            <th>
+                chair
+            </th>
+            <th>
+                caractere
+            </th>
+            <th>
+                image
+            </th>
+            <th>editer
+            </th>
+            <th>
+                delete
+            </th>
+        </tr>
+        <?php foreach ($plantes as $plante) : ?>
+            <tr>
+
+                <td>
+                    <a href="index.php?controller=plante&action=show&id=<?= $plante->getId() ?>"><?= $plante->getNom() ?></a>
+
+                </td>
+                <td>
+                    <?= $plante->getScienceNom() ?>
+                </td>
+                <td>
+                    <?= $plante->getMaturite() ?>
+                </td>
+                <td>
+                    <?= $plante->getPeriode() ?>
+                </td>
+                <td>
+                    <?= $plante->getDepartement() ?>
+                </td>
+                <td>
+                    <?= $plante->getGravite() ?>
+                </td>
+                <td>
+                    <?= $plante->getType() ?>
+                </td>
+
+                <td>
+                    <?= $plante->getGraine() ?>
+                </td>
+                <td>
+                    <?= $plante->getFruit() ?>
+                </td>
+                <td>
+                    <?= $plante->getChair() ?>
+                </td>
+                <td>
+                    <?= $plante->getCaractere() ?>
+                </td>
+                <td>
+                    <img src="./uploads/<?= $plante->getImage() ?>" alt="<?= $plante->getImage() ?>">
+                </td>
+                <td>
+                    <a title="lien edit" class="edit" href="index.php?controller=plante&action=edit&id=<?= $plante->getId() ?>">editer</a>
+                </td>
+                <td>
+                    <a title="lien delete" class="edit" href="index.php?controller=plante&action=delete&id=<?= $plante->getId() ?>">supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+</main>

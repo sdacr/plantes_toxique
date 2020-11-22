@@ -1,0 +1,23 @@
+<main class="main-acc">
+    <div class="center">
+        <p>Liste des principes actifs disponibles, selectionner un principe actif redirigera sur un uen liste des plantes concerncées
+        </p>
+    </div>
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                liste des principes actifs
+            </th>
+
+        </tr>
+        <?php foreach ($principes as $principe) : ?>
+            <tr>
+                <td>
+                    <a title="lien page plante par principe" href="index.php?controller=plante&action=showp&id=<?= $principe->getId() ?>"> <?= $principe->getPrincipeActif() ?></a>
+
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</main>

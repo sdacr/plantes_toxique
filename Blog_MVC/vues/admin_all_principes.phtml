@@ -1,0 +1,38 @@
+<main class="main-acc">
+    <nav>
+    </nav>
+    <table class="tabl-coul">
+        <tr>
+            <th>
+                liste des principes actifs
+            </th>
+            <th>
+                editer
+            </th>
+            <th>
+                supprimer
+            </th>
+
+        </tr>
+        <?php foreach ($principes as $principe) : ?>
+
+            <tr>
+                <td>
+                    <?= $principe->getPrincipeActif() ?>
+                </td>
+                <td>
+                    <a title="lien edit" href="index.php?controller=principe&action=edit&id=<?= $principe->getId() ?>">edit</a>
+                </td>
+                <td>
+                    <a title="lien delete" href="index.php?controller=principe&action=delete&id=<?= $principe->getId() ?>">supprimer</a>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
+    </table>
+    <div class="ajout">
+        <p>l'ajout d'un nouveau principe actif c'est ici:</p>
+        <a title="lien insert" href="index.php?controller=principe&action=insert">insert</a>
+    </div>
+
+</main>
